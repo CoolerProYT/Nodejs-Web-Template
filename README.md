@@ -37,3 +37,7 @@ Note: You can find the process_id/name by running the following command.
 ```bash
 pm2 list
 ```
+
+## Environment Variables
+This template uses environment variables to store sensitive information. To use environment variables, create a `.env` file in the root directory of the project and add the following variables.
+Example can be found in the `.env.example` file.
