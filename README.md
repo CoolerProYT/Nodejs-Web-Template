@@ -32,7 +32,7 @@ or
 ```bash
 pm2 delete process_id/name
 ```
-Note: 0 is the process id of the server. You can find the process id by running the following command.
+Note: You can find the process_id/name by running the following command.
 
 ```bash
 pm2 list
