@@ -1,5 +1,4 @@
 # Node.js Web Template
-___
 
 ## Description
 This is a template for a Node.js web application. It includes a basic server setup, a basic routing setup, and a basic view setup.
