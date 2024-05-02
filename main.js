@@ -5,9 +5,9 @@ const express = require('express');
 const expressLayouts = require('express-ejs-layouts');
 const session = require('express-session');
 const bodyParser = require('body-parser');
-
-// Importing controllers
-const homeController = require('./controller/homeController');
+const modelLoader = require('./middleware/modelLoader');
+const webRoutes = require('./route/web');
+const apiRoutes = require('./route/api');
 
 // Creating express app
 const app = express();
@@ -21,13 +21,16 @@ app.use(session({
     saveUninitialized: true
 })); // Session
 
+app.use(modelLoader); // Load models
+
 // Set view engine
 app.use(expressLayouts);
 app.set('layout', 'layouts/master'); // Set master layout
 app.set('view engine', 'ejs');
 
-// Routes
-app.get('/', homeController.render);
+// Mount the routers
+app.use('/', webRoutes);
+app.use('/api', apiRoutes);
 
 // Start server
 app.listen(80, () => {
