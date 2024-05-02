@@ -3,20 +3,21 @@ exports.render = (req, res) => {
     const User = req.models.User;
 
     let users;
+    let data;
 
     // Fetch the user with ID 1
     User.findByPk(1).then(user => {
         if (!user) {
-            const data = {
+            data = {
                 title: 'Home',
                 user: 'No user found'
             }
         } else {
             users = user.toJSON();
 
-            const data = {
+            data = {
                 title: 'Home',
-                user: users.name
+                user: users.email
             }
         }
 
