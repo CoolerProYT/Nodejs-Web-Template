@@ -38,6 +38,11 @@ Note: You can find the process_id/name by running the following command.
 pm2 list
 ```
 
+## Database
+This template uses MySQL as the database. To use MySQL, create a database and add the database information to the `config/config.json` file.
+
+Please ensure that your database is running before starting the server.
+
 ## Environment Variables
 This template uses environment variables to store sensitive information. To use environment variables, create a `.env` file in the root directory of the project and add the following variables.
 Example can be found in the `.env.example` file.
