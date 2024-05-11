@@ -32,6 +32,11 @@ app.set('view engine', 'ejs');
 app.use('/', webRoutes);
 app.use('/api', apiRoutes);
 
+// Redirect to home page if route not found
+app.get('*', function(req, res){
+    res.redirect('/')
+});
+
 // Start server
 app.listen(80, () => {
     console.log('Server is running on port 80');
